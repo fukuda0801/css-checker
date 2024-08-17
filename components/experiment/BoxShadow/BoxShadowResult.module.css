@@ -1,0 +1,10 @@
+.boxShadowResult {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  background-color: white;
+  margin-top: 16px;
+  border: 1px solid #ccc;
+  position: relative;
+  margin: 1px auto;
+}
