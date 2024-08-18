@@ -1,0 +1,64 @@
+.borderRadiusContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.borderRadiusGroup {
+  width: 40%;
+  border: 1px solid #969696;
+  border-radius: 5px;
+  margin-left: 6rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.borderRadiusGroup:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.borderTypeGroup {
+  padding: 1rem;
+  color: #666;
+}
+
+.borderTypeGroup > select {
+  border-color: #666;
+  color: #666;
+  margin-left: 3rem;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.borderColorSelect {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+}
+
+.borderColorSelect > input {
+  border: #666;
+  cursor: pointer;
+}
+
+.borderRadiusResult {
+  width: 50%;
+}
+
+.copyBorderGroup {
+  padding: 1rem;
+  color: #666;
+}
+
+.copyBorderGroup > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #66666643;
+  padding-bottom: 3px;
+}
