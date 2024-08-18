@@ -1,0 +1,15 @@
+.fontFamilyGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+}
+
+.fontFamilyGroup select {
+  border-color: #666;
+  color: #666;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.3rem 0.2rem;
+  margin-left: 2rem;
+}
