@@ -1,6 +1,6 @@
 import { useState } from "react";
-import InputSlider from "../../../components/experiment/BoxShadow/InputSlider";
-import BoxShadowResult from "../../../components/experiment/BoxShadow/BoxShadowResult";
+import InputSlider from "../../../components/experiment/BoxUtils/InputSlider";
+import BoxShadowResult from "../../../components/experiment/BoxUtils/BoxResult";
 import styles from "./boxShadow.module.css";
 import { Button } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -38,8 +38,11 @@ export default function BoxShadowExperiment() {
       });
   };
 
-  const boxShadow = `${horizon}px ${vertical}px ${blur}px ${spread}px ${color}`;
-  const boxShadowStyle = `box-shadow: ${boxShadow};`;
+  const boxShadow = {
+    boxShadow: `${horizon}px ${vertical}px ${blur}px ${spread}px ${color}`,
+  }
+  const boxShadowStyle = `box-shadow: ${boxShadow.boxShadow};`;
+  
   return (
     <section className={styles.boxShadowContent}>
       <div className={styles.boxShadowGroup}>
@@ -95,7 +98,7 @@ export default function BoxShadowExperiment() {
         </div>
         <div></div>
         <div className={styles.copyGroup}>
-          <p>{boxShadow}</p>
+          <p>{boxShadowStyle}</p>
           <Tooltip title="Copy">
             <ContentCopyIcon onClick={handleCopy} className={styles.copyIcon} />
           </Tooltip>
@@ -103,7 +106,7 @@ export default function BoxShadowExperiment() {
       </div>
 
       <div className={styles.boxShadowResult}>
-        <BoxShadowResult boxShadow={boxShadow} />
+        <BoxShadowResult styleProps={boxShadow} />
       </div>
     </section>
   );
