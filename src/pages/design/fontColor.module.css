@@ -8,7 +8,7 @@
 
 .fontBackGroup {
   width: 40%;
-  border: 1px solid #969696;
+  border: 1px solid #b0f7bc;
   border-radius: 5px;
   margin-left: 6rem;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -17,6 +17,14 @@
 .fontBackGroup:hover {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
+}
+
+.fontBackGroup > h2 {
+  color: white;
+  background-color: #b0f7bc;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
 
 .fontReset {

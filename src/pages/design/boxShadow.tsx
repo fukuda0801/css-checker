@@ -46,6 +46,7 @@ export default function BoxShadowExperiment() {
   return (
     <section className={styles.boxShadowContent}>
       <div className={styles.boxShadowGroup}>
+        <h2>box-shadow</h2>
         <InputSlider
           max={100}
           min={-100}

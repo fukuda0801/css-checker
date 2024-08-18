@@ -57,6 +57,7 @@ const FontColor = () => {
   return (
     <section className={styles.fontBackContent}>
       <div className={styles.fontBackGroup}>
+        <h2>font</h2>
         <ColorSelect
           labelText="背景色"
           value={backgroundColor}

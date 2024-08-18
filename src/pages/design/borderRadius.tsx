@@ -50,6 +50,7 @@ const BorderRadius = () => {
   return (
     <section className={styles.borderRadiusContent}>
       <div className={styles.borderRadiusGroup}>
+        <h2>border-radius</h2>
         <InputSlider
           max={300}
           min={1}
