@@ -1,0 +1,14 @@
+.colorSelectGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  padding: 1rem;
+}
+
+.colorSelectGroup > input {
+  border-color: #666;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
