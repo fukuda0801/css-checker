@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+}
+
+.drawer {
+  width: 150px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: fixed;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 10px;
+  margin-left: 150px;
+  width: calc(100% - 150px);
+}
+
+.listItem {
+  padding: 10px 25px;
+  border-bottom: 1px solid #66666660;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  color: #666;
+}
+
+/* ホバー時のスタイル */
+.listItem:hover {
+  background-color: #f0f0f0;
+  color: #6aedb2;
+}
+
+/* クリック時のスタイル */
+.listItem:active {
+  background-color: #e0e0e0;
+}

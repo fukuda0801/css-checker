@@ -1,6 +1,14 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import Sidebar from '../../components/experiment/Layout/Sidebar';
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <Sidebar>
+      <Component {...pageProps} />
+    </Sidebar>
+  );
 }
+
+export default MyApp;
