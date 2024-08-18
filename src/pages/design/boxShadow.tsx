@@ -97,7 +97,6 @@ export default function BoxShadowExperiment() {
             リセット
           </Button>
         </div>
-        <div></div>
         <div className={styles.copyGroup}>
           <p>{boxShadowStyle}</p>
           <Tooltip title="Copy">

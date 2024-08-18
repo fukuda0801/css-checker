@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
-import styles from './Sidebar.module.css';
-import { List, ListItem, ListItemText, Drawer } from '@mui/material';
+import { useRouter } from "next/router";
+import styles from "./Sidebar.module.css";
+import { List, ListItem, ListItemText, Drawer } from "@mui/material";
 
 export default function Sidebar({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -11,29 +11,36 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
 
   return (
     <div className={styles.container}>
-      <Drawer
-        variant="permanent"
-        className={styles.drawer}
-      >
+      <Drawer variant="permanent" className={styles.drawer}>
         <List>
-          <ListItem className={styles.listItem} onClick={() => handleNavigation('/')}>
+          <ListItem
+            className={styles.listItem}
+            onClick={() => handleNavigation("/")}
+          >
             <ListItemText primary="Top" />
           </ListItem>
-          <ListItem className={styles.listItem} onClick={() => handleNavigation('/design/boxShadow')}>
-            <ListItemText primary="Box Shadow" />
+          <ListItem
+            className={styles.listItem}
+            onClick={() => handleNavigation("/design/borderRadius")}
+          >
+            <ListItemText primary="border-radius" />
           </ListItem>
-          <ListItem className={styles.listItem} onClick={() => handleNavigation('/design/borderRadius')}>
-            <ListItemText primary="Border Radius" />
+          <ListItem
+            className={styles.listItem}
+            onClick={() => handleNavigation("/design/boxShadow")}
+          >
+            <ListItemText primary="box-shadow" />
           </ListItem>
-          <ListItem className={styles.listItem} onClick={() => handleNavigation('/design/fontColor')}>
-            <ListItemText primary="Font" />
+          <ListItem
+            className={styles.listItem}
+            onClick={() => handleNavigation("/design/fontColor")}
+          >
+            <ListItemText primary="font" />
           </ListItem>
         </List>
       </Drawer>
 
-      <main className={styles.main}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 }

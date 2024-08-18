@@ -11,9 +11,9 @@
 
 .main {
   flex-grow: 1;
-  padding: 10px;
   margin-left: 150px;
   width: calc(100% - 150px);
+  background-color: #b0f7bc18;
 }
 
 .listItem {
@@ -25,13 +25,11 @@
   color: #666;
 }
 
-/* ホバー時のスタイル */
 .listItem:hover {
   background-color: #f0f0f0;
   color: #6aedb2;
 }
 
-/* クリック時のスタイル */
 .listItem:active {
   background-color: #e0e0e0;
 }
