@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import Tooltip from "@mui/material/Tooltip";
+import { handleCopy, handleSliderChange } from "../../../utils/utilFunc";
 
 const BorderRadius = () => {
   const [boxWidth, setBoxWidth] = useState(50);
@@ -13,12 +14,6 @@ const BorderRadius = () => {
   const [borderThick, setBorderThick] = useState(2);
   const [borderType, setBorderType] = useState("solid");
   const [borderColor, setBorderColor] = useState("#000000");
-
-  const handleSliderChange =
-    (setter: React.Dispatch<React.SetStateAction<number>>) =>
-    (event: Event, value: number | number[]) => {
-      setter(value as number);
-    };
 
   const borderStyle = {
     width: `${boxWidth}px`,
@@ -34,17 +29,6 @@ const BorderRadius = () => {
     setBorderThick(2);
     setBorderType("solid");
     setBorderColor("#000000");
-  };
-
-  const handleCopy = (styleProp: string) => {
-    navigator.clipboard
-      .writeText(styleProp)
-      .then(() => {
-        alert("値がクリップボードにコピーされました");
-      })
-      .catch((err) => {
-        console.error("コピーに失敗しました", err);
-      });
   };
 
   return (

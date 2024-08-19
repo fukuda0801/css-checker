@@ -4,7 +4,8 @@ import BoxShadowResult from "../../../components/experiment/BoxUtils/BoxResult";
 import styles from "./boxShadow.module.css";
 import { Button } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip from "@mui/material/Tooltip";
+import { handleCopy, handleSliderChange } from "../../../utils/utilFunc";
 
 export default function BoxShadowExperiment() {
   const [horizon, setHorizon] = useState(0);
@@ -12,12 +13,6 @@ export default function BoxShadowExperiment() {
   const [blur, setBlur] = useState(50);
   const [spread, setSpread] = useState(0);
   const [color, setColor] = useState("#000000");
-
-  const handleSliderChange =
-    (setter: React.Dispatch<React.SetStateAction<number>>) =>
-    (event: Event, value: number | number[]) => {
-      setter(value as number);
-    };
 
   const handleResetBoxShadow: () => void = () => {
     setHorizon(0);
@@ -27,22 +22,11 @@ export default function BoxShadowExperiment() {
     setColor("#000000");
   };
 
-  const handleCopy = () => {
-    navigator.clipboard
-      .writeText(boxShadowStyle)
-      .then(() => {
-        alert("値がクリップボードにコピーされました");
-      })
-      .catch((err) => {
-        console.error("コピーに失敗しました", err);
-      });
-  };
-
   const boxShadow = {
     boxShadow: `${horizon}px ${vertical}px ${blur}px ${spread}px ${color}`,
-  }
+  };
   const boxShadowStyle = `box-shadow: ${boxShadow.boxShadow};`;
-  
+
   return (
     <section className={styles.boxShadowContent}>
       <div className={styles.boxShadowGroup}>
@@ -100,7 +84,7 @@ export default function BoxShadowExperiment() {
         <div className={styles.copyGroup}>
           <p>{boxShadowStyle}</p>
           <Tooltip title="Copy">
-            <ContentCopyIcon onClick={handleCopy} className={styles.copyIcon} />
+            <ContentCopyIcon onClick={() => handleCopy(boxShadowStyle)} className={styles.copyIcon} />
           </Tooltip>
         </div>
       </div>

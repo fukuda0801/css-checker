@@ -7,6 +7,7 @@ import FontBackResult from "../../../components/experiment/BoxUtils/FontBackResu
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import Tooltip from "@mui/material/Tooltip";
 import { Button } from "@mui/material";
+import { handleCopy, handleSliderChange } from "../../../utils/utilFunc";
 
 const FontColor = () => {
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
@@ -15,29 +16,12 @@ const FontColor = () => {
   const [fontSize, setFontSize] = useState(16);
   const [fontFamily, setFontFamily] = useState("sans-serif");
 
-  const handleSliderChange =
-    (setter: React.Dispatch<React.SetStateAction<number>>) =>
-    (event: Event, value: number | number[]) => {
-      setter(value as number);
-    };
-
   const handleResetFont = () => {
     setBackgroundColor("#ffffff");
     setFontColor("#000000");
     setFontWeight(500);
     setFontSize(16);
     setFontFamily("sans-serif");
-  };
-
-  const handleCopy = (styleProp: string) => {
-    navigator.clipboard
-      .writeText(styleProp)
-      .then(() => {
-        alert("値がクリップボードにコピーされました");
-      })
-      .catch((err) => {
-        console.error("コピーに失敗しました", err);
-      });
   };
 
   const backGround = {
@@ -52,7 +36,7 @@ const FontColor = () => {
   };
 
   const fontStyle = `font: ${fontWeight}px ${fontSize}px ${fontFamily};`;
-  const fontColorStyle = `color: ${fontColor};`
+  const fontColorStyle = `color: ${fontColor};`;
 
   return (
     <section className={styles.fontBackContent}>
